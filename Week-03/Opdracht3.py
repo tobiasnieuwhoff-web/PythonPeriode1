@@ -2,9 +2,17 @@
 # Maak een list aan genaamd books met minimaal 5 boeken
 # Gebruik daarna een for-loop om ieder boek 1 voor 1 uit te printen
 
+boeken = ['The Hunger Games',
+          'Lord of the rings',
+          'I, robot',
+          'The Hunger Games: Catching Fire',
+          'The Hunger Games: Mocking Jay',
+          ]
 
+for boeken in boeken:
+    print(boeken)
 
-
+print ("------------------")
 
 # Oefening 2
 # Maak een list aan genaamd games met minimaal 5 games
@@ -13,25 +21,49 @@
 # Bijvoorbeeld: "Ik speel graag Minecraft"
 
 
+games = [
+    'Elk Resident Evil spel',
+    'Battlefield 1',
+    'Deadlock',
+    'The binding of Isaac',
+    'Overwatch 2'
+]
 
+for games in games:
+    print (f"Ik speel graag {games}")
 
-
+print ("------------------")
 # Oefening 3
 # Maak een list aan genaamd scores met de volgende waardes:
 # 10, 25, 40, 15, 30
 # Gebruik een for-loop om iedere score uit te printen
 # Tel bij iedere score 10 punten op en print daarna de nieuwe score uit
 
+scores = [
+    10,
+    25,
+    40,
+    15,
+    30
+]
 
+for i in range(0, 5):
+    print(scores[i])
+print ("------------------")
+for i in range(0, 5):
+    a = scores[i] + 10
+    print(a)
 
-
+print ("------------------")
 
 # Oefening 4
 # Gebruik een for-loop met range() om de getallen 1 tot en met 10 uit te printen
 # Zorg ervoor dat zowel 1 als 10 geprint worden
 
+for i in range(1, 11):
+    print(i)
 
-
+print ("------------------")
 
 
 # Oefening 5
@@ -43,7 +75,8 @@
 # Ga door tot en met 10 x 5
 
 
-
+for i in range(1,11):
+    print(f"{i} X 5 = {5 * i}")
 
 
 # Oefening 6
@@ -52,10 +85,16 @@
 # Verlaag countdown iedere keer met 1
 # Print na de loop "START!"
 
+print ("------------------")
+
+
 countdown = 10
 
+while countdown >= 1:
+    print(countdown)
+    countdown -= 1
 
-
+print("START!")
 
 
 # Oefening 7
@@ -67,9 +106,16 @@ countdown = 10
 # Print na iedere aanval hoeveel health het monster nog heeft
 # Print daarna "Monster verslagen!"
 
+print ("------------------")
+
 monsterHealth = 100
 damage = 20
-
+    
+while monsterHealth > 0:
+    monsterHealth -= damage
+    print(monsterHealth)
+              
+print("Monster Verslagen!")
 
 
 
@@ -82,3 +128,20 @@ damage = 20
 # Als het item "Potion" is, print dan "Deze potion geeft health terug"
 # Als het item "Key" is, print dan "Met deze key kun je een deur openen"
 # Bonus! Maak een variabel itemCount aan en tel hoeveel items er in de inventory zitten
+
+print ("------------------")
+
+inv = [
+    'sword',
+    'potion',
+    'shield',
+    'bow',
+    'key'
+]
+
+for inv in inv:
+    print(inv)
+    if inv == "potion":
+        print("Deze potion geeft health terug")
+    if inv == "key":
+        print("Met deze key kun je een deur openen")
