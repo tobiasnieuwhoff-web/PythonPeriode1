@@ -1,4 +1,4 @@
-# Opdracht - Weapon Selector
+# Opdracht - weapon Selector
 #
 # Je gaat een programma maken waarin een speler een wapen kan kiezen.
 # Ieder wapen heeft zijn eigen damage en een speciale eigenschap.
@@ -15,6 +15,9 @@
 # Gebruik voor alle variabelen de juiste Python naming conventions!
 # Bijvoorbeeld: player_name in plaats van playerName.
 
+player_name = "Tobias"
+selected_weapon = "Axe"
+weapon_damage = 15
 
 # Stap 2 - Match Case
 # Gebruik een match case om te controleren welk wapen de speler heeft.
@@ -46,7 +49,31 @@
 # TIP:
 # Gebruik case _ voor een onbekende waarde.
 
-
+#stap 4 comment: Dit checkt wat voor wapen je gebruikt en is meer georganiseerd dan een If then reeks
+match selected_weapon:
+    case "Sword":
+        weapon_damage = 20
+        print("Je gebruikt een zwaard!")
+    case "Bow":
+            weapon_damage = 15
+            print("Je gebruikt een boog!")
+    case "Staff":
+            weapon_damage = 25
+            print("Je gebruikt een magische staf!")
+    case "Axe":
+            weapon_damage = 30
+            print("Je gebruikt een bijl!")
+    case "Halberd":
+            weapon_damage = 28
+            print("Je gebruikt een halberd!")
+    case "Greatsword":
+            weapon_damage = 30
+            print("Je gebruikt een greatsword!")
+    case _:
+        #stap 4 comment: Dit checkt als er geen/onbekent wapen is gebruikt
+            weapon_damage = 0
+            print("Onbekent wapen!")
+        
 # Stap 3 - Resultaat printen
 # Print na de match case de volgende informatie:
 #
@@ -56,6 +83,10 @@
 #
 # Zorg ervoor dat de informatie uit je variabelen komt.
 
+#stap 4 comment: Dit print de variables uit
+print(f"Speler: {player_name}")
+print(f"Wapen: {selected_weapon}")
+print(f"Damage: {weapon_damage}")
 
 # Stap 4 - Comments
 # Voeg minimaal 3 eigen comments toe aan je programma.
@@ -98,9 +129,26 @@
 # Print na iedere aanval hoeveel health de vijand nog heeft.
 # Zorg ervoor dat de health niet onder de 0 komt.
 
+enemy_name = "Goblin"
+enemy_health = 61
+
+for i in range(0, 3):
+    enemy_health -= weapon_damage
+    if enemy_health <= 0:
+           print(f"{enemy_name} defeated.")
+           break
+    print(f"{enemy_name} has {enemy_health} health points left.")
 
 # BONUS 3
 # Gebruik een while-loop om de vijand aan te vallen
 # totdat de vijand geen health meer heeft.
 #
 # Print daarna "Vijand verslagen!"
+enemy_name = "Ghoul"
+enemy_health = 100
+while enemy_health >= 0:
+       enemy_health -= weapon_damage
+       if enemy_health <= 0:
+            print(f"{enemy_name} verslagen!")
+            break
+       print(f"{enemy_name} heeft {enemy_health} health points over")
